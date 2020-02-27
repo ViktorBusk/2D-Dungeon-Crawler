@@ -1,0 +1,103 @@
+﻿  Game.cpp
+c:\users\vikto\desktop\dinogame\dinogame\utils.hpp(32): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\desktop\dinogame\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(33): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(45): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(56): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(171): warning C4018: '<=': signed/unsigned mismatch
+c:\users\vikto\desktop\dinogame\dinogame\game.cpp(173): warning C4018: '<=': signed/unsigned mismatch
+  Object.cpp
+c:\users\vikto\desktop\dinogame\dinogame\utils.hpp(32): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(68): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(97): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(98): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(99): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(100): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(101): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(203): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(205): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(208): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(208): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(210): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  Generating Code...
+c:\users\vikto\desktop\dinogame\dinogame\object.cpp(122): warning C4172: returning address of local variable or temporary
+  DinoGame.vcxproj -> C:\Users\vikto\Desktop\DinoGame\Debug\DinoGame.exe

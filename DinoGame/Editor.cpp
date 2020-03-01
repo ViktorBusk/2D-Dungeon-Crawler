@@ -29,6 +29,7 @@ void Editor::init()
 	this->mouseRect.setFillColor(Color(100, 255, 100, 50));
 	this->setStartPoint = true;
 	this->followMouse = false;
+	this->chosenAmt = 0;
 	this->initGrid();
 	this->initGUI();
 }
@@ -45,6 +46,8 @@ void Editor::initGUI()
 {
 	GUI::GUI_elements = &this->GUI_elements;
 
+	//Order of the partentfolders are important!!!
+	//////////////////////////////PARENTFOLDERS//////////////////////////////
 	Folder* floorFolder = new Folder("Floor", NULL, Vector2f(10.f, 10.f));
 	this->GUI_elements.push_back(floorFolder);
 	
@@ -59,16 +62,36 @@ void Editor::initGUI()
 
 	Folder* wallFolder = new Folder("Walls", NULL, Vector2f(10.f, 110.f));
 	this->GUI_elements.push_back(wallFolder);
+	//////////////////////////////////////////////////////////////////////////
+
+	Folder* testFolder0 = new Folder("Test Folder", floorFolder, Vector2f(10.f, 35.f));
+	this->GUI_elements.push_back(testFolder0);
+	floorFolder->addContent(testFolder0);
+
+	Folder* testFolder1 = new Folder("Test Folder", characterFolder, Vector2f(10.f, 60.f));
+	this->GUI_elements.push_back(testFolder1);
+	characterFolder->addContent(testFolder1);
+
+	Folder* testFolder2 = new Folder("Test Folder", testFolder1, Vector2f(10.f, 85.f));
+	this->GUI_elements.push_back(testFolder2);
+	testFolder1->addContent(testFolder2);
 	
-	//Spawners
-	Spawner* bigZombieSpawner = new Spawner(Vector2f(0.f, 125.f), PreLoad::Textures::bigZombie, "BigZombie", characterFolder, this->entitesPtr);
+	
+	Spawner* bigZombieSpawner = new Spawner(Vector2f(0.f, 100.f), PreLoad::Textures::bigZombie, "BigZombie", testFolder2, this->entitesPtr);
 	this->GUI_elements.push_back(bigZombieSpawner);
-	characterFolder->addContent(bigZombieSpawner);
+	testFolder2->addContent(bigZombieSpawner);
 
-	Spawner* heroSpawner = new Spawner(Vector2f(0.f, 155.f), PreLoad::Textures::knight, "Hero", characterFolder, this->entitesPtr);
+	Spawner* demonSpawner = new Spawner(Vector2f(0.f, 130.f), PreLoad::Textures::demon, "Demon", testFolder2, this->entitesPtr);
+	this->GUI_elements.push_back(demonSpawner);
+	testFolder2->addContent(demonSpawner);
+
+	Spawner* heroSpawner = new Spawner(Vector2f(0.f, 160.f), PreLoad::Textures::knight, "Hero", testFolder2, this->entitesPtr);
 	this->GUI_elements.push_back(heroSpawner);
-	characterFolder->addContent(heroSpawner);
+	testFolder2->addContent(heroSpawner);
 
+	Spawner* skeletSpawner= new Spawner(Vector2f(0.f, 190.f), PreLoad::Textures::skelet, "Skelet", testFolder2, this->entitesPtr);
+	this->GUI_elements.push_back(skeletSpawner);
+	testFolder2->addContent(skeletSpawner);
 }
 
 void Editor::initSpawners()
@@ -195,26 +218,30 @@ void Editor::update(const float & dt, const float & multiplier)
 	//--Ported from JS-version--------------
 	for (Object* entity : *this->entitesPtr)
 	{
+		if(entity->chosen) chosenAmt++;
 		if (entity->chosen && entity->mouseColision(this->window) && this->setStartPoint && Mouse::isButtonPressed(Mouse::Left))
 		{
 			this->followMouse = true;
 			this->mousePoint.set = true;
-			*this->cameraFollow = entity;
+			if(this->chosenAmt == 2) *this->cameraFollow = entity;
 		}
 	}
 
 	bool someChosen = false;
+
+	this->chosenAmt = this->entitesPtr->size();
 	for (Object* entity : *this->entitesPtr)
 	{
-		if (!this->followMouse)
+		if (!this->followMouse && Mouse::isButtonPressed(Mouse::Left))
 		{
-			if (!Utils::AABBColision(this->mouseRect, entity->getHitbox()) && Mouse::isButtonPressed(Mouse::Left)) 
+			if (!Utils::AABBColision(this->mouseRect, entity->getHitbox())) 
 				entity->chosen = false;
 			if(Utils::AABBColision(this->mouseRect, entity->getHitbox()))
 				entity->chosen = true;
 		}
 		this->ensureGrid(entity); //Ensures the grid if the entity is a tile
 		if (entity->chosen) someChosen = true;
+		else this->chosenAmt--;
 	}
 	if (!someChosen) *this->cameraFollow = NULL;
 

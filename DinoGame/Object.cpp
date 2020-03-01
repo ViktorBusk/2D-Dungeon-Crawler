@@ -23,6 +23,7 @@ void Object::initVariables()
 	this->hitboxComponent = NULL;
 	this->colisionComponent = NULL;
 	this->zIndex = 0;
+	this->currentDistance = 0;
 	this->fixedZIndex = false;
 	this->colisionIndex = this->zIndex;
 }
@@ -46,11 +47,11 @@ void Object::createColisionComponent(bool outwards, bool left, bool right, bool 
 	this->colisionIndex = 1;
 }
 
-void Object::updateColisionComponent(Sprite *characterSprite, const RectangleShape &characterHitbox, const float &dt, const float &multiplier)
+void Object::updateColisionComponent(Sprite *characterSprite, const RectangleShape &characterHitbox, const Vector2f& prevPos, const float &dt, const float &multiplier)
 {
 	if (this->colisionComponent != NULL)
 	{
-		this->colisionComponent->update(characterSprite, characterHitbox, dt, multiplier);
+		this->colisionComponent->update(characterSprite, characterHitbox, prevPos, dt, multiplier);
 	}
 }
 
@@ -81,11 +82,19 @@ void Object::update(const float& dt, const float& multiplier)
 	this->colisionVec.clear();
 }
 
+void Object::drawSpriteRect(RenderWindow *window)
+{
+	RectangleShape rect(Vector2f(this->sprite.getGlobalBounds().width, this->sprite.getGlobalBounds().height));
+	rect.setPosition(this->sprite.getPosition());
+	rect.setFillColor(this->hitboxComponent->color);
+	window->draw(rect);
+}
+
 void Object::updateColisions()
 {
 	if (this->hitboxComponent) {
 		bool isColiding = false;
-		for (Object* object : colisionVec)
+		for (Object* object : this->colisionVec)
 		{	
 			if (object == NULL || this == object) continue;
 			else if(object->hitboxComponent == NULL) continue;
@@ -95,9 +104,15 @@ void Object::updateColisions()
 				object->addColisionObj(this);
 				this->hitboxComponent->rect->setFillColor(Color::Magenta);
 				object->getHitbox().setFillColor(Color::Magenta);
+				object->currentDistance = Utils::distance2f(this->getCenterHitbox(), object->getCenterHitbox());
 			}
 		}
 		if(!isColiding) this->hitboxComponent->rect->setFillColor(this->hitboxComponent->color);
+		
+		//Sort based on distance to itself
+		std::sort(this->colisionVec.begin(), this->colisionVec.end(), [](const Object* obj1, const Object* obj2) {
+			return obj1->currentDistance < obj2->currentDistance;
+		});
 	}
 }
 

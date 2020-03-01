@@ -20,7 +20,7 @@ void ColisionComponent::draw(RenderWindow * window) const
 
 }
 
-void ColisionComponent::update(Sprite *characterSprite, const RectangleShape &characterHitbox, const float &dt, const float &multiplier)
+void ColisionComponent::update(Sprite *characterSprite, const RectangleShape &characterHitbox, const Vector2f& prevPos, const float &dt, const float &multiplier)
 {
 	//TODO: change if conditions cause they only work if they sprite has the same size as the wall 
 	//Character

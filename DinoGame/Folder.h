@@ -10,12 +10,10 @@ class Folder : public GUI
 private:
 	void init();
 	bool contentState;
-	bool visableState;
 	bool mousePressedState;
 	bool hidden;
 	Texture* openImg;
 	Texture* closedImg;
-	Folder* parent;
 	std::vector<GUI*> content;
 
 public:
@@ -26,7 +24,7 @@ public:
 	virtual void update(const float &dt, const float &multiplier, const Vector2f &mousePos);
 	void open();
 	void close();
-	void moveLower_GUI_elements();
+	void moveLower_GUI_elements(bool down);
 	void addContent(GUI *moreContent);
 	void addContent(std::vector<GUI*> moreContent);
 	virtual void show();

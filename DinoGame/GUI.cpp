@@ -1,8 +1,19 @@
 #include "GUI.h"
 
-GUI::GUI()
+GUI::GUI(Vector2f pos, GUI* parent)
 {
-	
+	this->parent = parent;
+	if (this->parent != NULL)
+	{
+		this->sprite.setPosition(Vector2f(this->parent->getPosition().x + this->parent->sprite.getGlobalBounds().width / 2, pos.y));
+		this->myIndex = this->parent->myIndex;
+	}
+	else
+	{
+		this->sprite.setPosition(pos);
+		this->myIndex = GUI::index;
+		GUI::index++;
+	}
 }
 
 GUI::~GUI()
@@ -39,6 +50,11 @@ void GUI::mapToWindowCoords(RenderWindow * window)
 void GUI::drawText(RenderWindow * window)
 {
 	window->draw(this->text);
+}
+
+void GUI::moveY(const float &yDist)
+{
+	this->constPos = Vector2f(this->constPos.x, this->constPos.y + yDist);
 }
 
 

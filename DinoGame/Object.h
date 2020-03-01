@@ -30,6 +30,7 @@ protected:
 public:
 	bool fixedZIndex;
 	bool chosen;
+	float currentDistance;
 	struct GridPos
 	{
 		Vector2i topLeft;
@@ -68,8 +69,9 @@ public:
 	//Functions
 	virtual void draw(RenderWindow * window) const = 0;
 	virtual void update(const float &dt,const float &multiplier) = 0;
+	void drawSpriteRect(RenderWindow *window);
 	void updateColisions();
-	void updateColisionComponent(Sprite *characterSprite, const RectangleShape &characterHitbox, const float &dt, const float &multiplier);
+	void updateColisionComponent(Sprite *characterSprite, const RectangleShape &characterHitbox, const Vector2f& prevPos, const float &dt, const float &multiplier);
 	bool mouseColision(RenderWindow *window);
 	bool colision(Object* object);
 	void flipTexture();

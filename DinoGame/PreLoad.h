@@ -8,10 +8,15 @@ class PreLoad {
 public:
 	struct Textures
 	{
+		//https://www.toptal.com/developers/css/sprite-generator/
+		//Padding: 5 | Left-right
+		
 		//Characters
 		static Texture* knight;
 		static Texture* bigZombie;
 		static Texture* weapons;
+		static Texture* demon;
+		static Texture* skelet;
 
 		//Tiles
 		static Texture* floors;

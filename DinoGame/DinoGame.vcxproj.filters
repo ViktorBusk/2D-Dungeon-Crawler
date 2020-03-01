@@ -156,6 +156,12 @@
     <ClCompile Include="GUI.cpp">
       <Filter>Header Files\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="Demon.cpp">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Skelet.cpp">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -252,6 +258,12 @@
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
     <ClInclude Include="AllEntities.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Demon.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Skelet.h">
       <Filter>Header Files\Entities\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

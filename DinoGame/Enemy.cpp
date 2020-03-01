@@ -21,8 +21,6 @@ Enemy::Enemy(Vector2f pos, Texture *spriteSheet, Vector2i sheetSize, Vector2f sc
 	trollingDirs[7] = "RD";
 	this->trolling = 0;
 	this->dir = this->trollingDirs[rand() % this->trollingDirs->size()];
-
-	this->createMovementComponent(100.f, 4.f, FRICTION);
 }
 
 void Enemy::setAnimations()
@@ -51,6 +49,11 @@ void Enemy::draw(RenderWindow * window) const
 
 void Enemy::update(const float & dt, const float & multiplier)
 {
+	////Movement
+	//if (Keyboard::isKeyPressed(Keyboard::W) && !Keyboard::isKeyPressed(Keyboard::S)) this->up(dt, multiplier);
+	//if (Keyboard::isKeyPressed(Keyboard::A) && !Keyboard::isKeyPressed(Keyboard::D)) this->left(dt, multiplier);
+	//if (Keyboard::isKeyPressed(Keyboard::S) && !Keyboard::isKeyPressed(Keyboard::W)) this->down(dt, multiplier);
+	//if (Keyboard::isKeyPressed(Keyboard::D) && !Keyboard::isKeyPressed(Keyboard::A)) this->right(dt, multiplier);
 	trolling += dt * multiplier;
 
 	if (trolling >= rand()*cap)

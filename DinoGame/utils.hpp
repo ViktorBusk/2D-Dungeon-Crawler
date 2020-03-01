@@ -31,6 +31,10 @@ struct Utils {
 	{
 		return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 	}
+	static float distance2f(const sf::Vector2f &a, const sf::Vector2f &b)
+	{
+		return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+	}
 	static bool AABBColision(const sf::RectangleShape &r1, const sf::RectangleShape &r2)
 	{
 		sf::Vector2f r1Pos = r1.getPosition();

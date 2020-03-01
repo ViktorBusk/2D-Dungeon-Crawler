@@ -19,7 +19,7 @@ public:
 	~ColisionComponent();
 
 	void draw(RenderWindow * window) const;
-	void update(Sprite *characterSprite, const RectangleShape &characterHitbox, const float &dt, const float &multiplier);
+	void update(Sprite *characterSprite, const RectangleShape &characterHitbox, const Vector2f& prevPos, const float &dt, const float &multiplier);
 };
 
 

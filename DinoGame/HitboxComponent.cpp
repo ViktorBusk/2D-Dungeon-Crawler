@@ -40,7 +40,7 @@ void HitboxComponent::update(const float & dt, const float & multiplier)
 
 void HitboxComponent::setDynamicComponent(int hitboxIndex)
 {
-	this->hitboxIndex = hitboxIndex + 1;
+	this->hitboxIndex = hitboxIndex;
 	this->dynamicComponent = true;
 	this->rect = &this->dynamicRect;
 }

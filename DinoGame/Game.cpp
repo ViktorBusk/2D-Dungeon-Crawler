@@ -111,11 +111,7 @@ void Game::startLoop()
 			entity->update(this->dt, this->multiplier);
 			//this->ensureBounds(entity);
 			if (this->editor != NULL) entity->moveWithMouse(this->editor->mousePos, this->editor->followMouse, this->editor->mousePoint.pos);
-			Vector2f acutalPos = entity->getPos();
-			Vector2f pixelPos = Vector2f(round(acutalPos.x), round(acutalPos.y));
-			entity->setPosition(pixelPos);
 			entity->draw(this->window);
-			entity->setPosition(acutalPos);
 		}
 	
 		//Editor

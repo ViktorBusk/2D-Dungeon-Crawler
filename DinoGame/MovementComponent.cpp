@@ -8,6 +8,7 @@ MovementComponent::MovementComponent(Sprite &sprite, float maxVelocity, float ac
 	this->acc = acc;
 	this->deAcc = deAcc;
 	this->maxVel = maxVelocity;
+	this->prevPos = this->spritePtr->getPosition();
 }
 
 
@@ -19,6 +20,11 @@ MovementComponent::~MovementComponent()
 const Vector2f & MovementComponent::getVel() const
 {
 	return this->vel;
+}
+
+const Vector2f & MovementComponent::getPrevPos() const
+{
+	return this->prevPos;
 }
 
 void MovementComponent::move(const float dir_x, const float dir_y, const float& dt, const float &multiplier)
@@ -69,6 +75,7 @@ void MovementComponent::update(const float & dt, const float & multiplier)
 			this->vel.y = -this->maxVel;
 	}
 
+	this->prevPos = this->spritePtr->getPosition();
 	this->spritePtr->move(this->getClampedMagVel()*dt);
 }
 

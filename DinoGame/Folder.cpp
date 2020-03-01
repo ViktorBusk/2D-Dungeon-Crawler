@@ -2,13 +2,8 @@
 
 
 Folder::Folder(std::string text, Folder* parent, Vector2f pos) :
-	GUI()
+	GUI(pos, parent)
 {
-	this->parent = parent;
-	if (this->parent != NULL)
-		this->sprite.setPosition(Vector2f(this->parent->getPosition().x + this->parent->sprite.getGlobalBounds().width / 2, pos.y));
-	else
-		this->sprite.setPosition(pos);
 	this->sprite.setTexture(*PreLoad::Textures::closedFolder);
 	this->sprite.setScale(0.2f, 0.2f);
 	this->constTextScale = Vector2f(0.5, 0.5);
@@ -17,7 +12,7 @@ Folder::Folder(std::string text, Folder* parent, Vector2f pos) :
 	this->text.setFont(*PreLoad::Fonts::font1);
 	this->constPos = this->sprite.getPosition();
 	this->constSize = this->sprite.getScale();
-
+	this->constDimensions = this->sprite.getGlobalBounds();
 	this->init();
 }
 
@@ -43,44 +38,45 @@ void Folder::open()
 {
 	this->contentState = true;
 	this->sprite.setTexture(*this->openImg);
-	this->moveLower_GUI_elements();
 	for (GUI *element : this->content)
 	{
 		element->show();
 	}
+	this->moveLower_GUI_elements(true);
 }
 
 void Folder::close()
 {
 	this->contentState = false;
 	this->sprite.setTexture(*this->closedImg);
+	this->moveLower_GUI_elements(false);
 	for (GUI *element : this->content)
 	{
 		element->hide();
 	}
-	this->moveLower_GUI_elements();
 }
 
-void Folder::moveLower_GUI_elements()
+void Folder::moveLower_GUI_elements(bool down)
 {
-	if (this->GUI_elements == NULL) return;
-	/*bool foundSelf = false;
-	
-	if (this->contentState)
+	if (GUI::GUI_elements == NULL || this->content.size() == 0) return;
+	float lowestPos = -INT_MAX;
+
+	//Find the lowest element in the folder
+	for (GUI* element : *GUI::GUI_elements)
 	{
-		for (GUI* element : *this->GUI_elements)
-		{
-			if (this == element) foundSelf = true;
-			if (foundSelf && this != element)
-			{
-				
-			}
-
-		}
+		float bottom = element->constPos.y + element->constDimensions.height;
+		if (element->myIndex != this->myIndex || !element->visableState) continue;
+		if (bottom > lowestPos) lowestPos = bottom;
 	}
-	else {
 
-	}*/
+	float distance = this->content[0]->constPos.y - lowestPos;
+	if(down) distance = -distance;
+
+	//Move all the lover elements by that distance
+	for (GUI* element : *GUI::GUI_elements)
+	{
+		if (element->myIndex > this->myIndex) element->moveY(distance);
+	}
 }
 
 void Folder::addContent(GUI * moreContent)
@@ -153,3 +149,5 @@ void Folder::update(const float & dt, const float & multiplier, const Vector2f &
 	if (!Mouse::isButtonPressed(Mouse::Left)) this->mousePressedState = false;
 	this->GUI::update(dt, multiplier, mousePos);
 }
+
+unsigned int Folder::index = 0;

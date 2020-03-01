@@ -166,7 +166,7 @@ void Character::update(const float & dt, const float & multiplier)
 		if (this == object) continue;
 		Wall* wall = dynamic_cast<Wall*>(object);
 		if (wall != NULL) {
-			wall->updateColisionComponent(&this->sprite, this->hitboxComponent->staticRect, dt, multiplier);
+			wall->updateColisionComponent(&this->sprite, this->hitboxComponent->staticRect, this->movementComponent->getPrevPos(), dt, multiplier);
 			break;
 		}
 	}

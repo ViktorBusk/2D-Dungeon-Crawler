@@ -29,6 +29,7 @@ private:
 	void ensureGrid(Object* entity);
 	Sprite gridSprite;
 	bool showGrid;
+	unsigned int chosenAmt;
 
 public:
 	Vector2f mousePos;

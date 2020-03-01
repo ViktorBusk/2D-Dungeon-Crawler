@@ -12,7 +12,7 @@ Weapon::Weapon(Vector2f pos, Texture *spriteSheet, Vector2i sheetSize, Vector2f 
 
 	//Hitbox
 	this->createHitboxComponent(Color(0, 0, 255, 125));
-	std::vector<int> hitboxData = PreLoad::Hitboxes::hitboxlist->hitboxData[3][this->type].second;
+	std::vector<int> hitboxData = PreLoad::Hitboxes::hitboxlist->hitboxData[4][this->type].second;
 	this->hitboxComponent->setStaticComponent(Vector2f(hitboxData[2], hitboxData[3]), Vector2f(hitboxData[4], hitboxData[5]));
 }
 

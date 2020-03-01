@@ -11,9 +11,10 @@ Wall::Wall(Vector2f pos, Vector2i type) :
 	this->hitboxComponent->setStaticComponent(Vector2f(0.f, 0.f), Vector2f(this->sprite.getTextureRect().width, this->sprite.getTextureRect().height));
 
 	//Colision
-	this->createColisionComponent(false, false, true, false, true);
+	this->createColisionComponent(false, false, true, true, false);
+	this->colisionIndex = 1000000000;
+	this->zIndex = this->colisionIndex;
 	this->fixedZIndex = true;
-	this->zIndex = 1000;
 }
 
 Wall::~Wall()

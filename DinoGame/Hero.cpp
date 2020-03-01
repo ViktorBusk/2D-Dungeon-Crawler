@@ -15,9 +15,9 @@ Hero::Hero(Vector2f pos) :
 
 	//Hitbox
 	this->createHitboxComponent(Color(0, 255, 0, 125));
-	std::vector<int> hitboxData = PreLoad::Hitboxes::hitboxlist->hitboxData[2][1].second;
+	std::vector<int> hitboxData = PreLoad::Hitboxes::hitboxlist->hitboxData[3][1].second;
 	this->hitboxComponent->setStaticComponent(Vector2f(hitboxData[2], hitboxData[3]), Vector2f(hitboxData[4], hitboxData[5]));
-	this->hitboxComponent->setDynamicComponent(1);
+	this->hitboxComponent->setDynamicComponent(3);
 }
 
 void Hero::draw(RenderWindow * window) const

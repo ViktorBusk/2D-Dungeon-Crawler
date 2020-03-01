@@ -130,6 +130,7 @@
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="ColisionComponent.cpp" />
+    <ClCompile Include="Demon.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PreLoad.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Skelet.cpp" />
     <ClCompile Include="Slider.cpp" />
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -163,6 +165,7 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="ColisionComponent.h" />
+    <ClInclude Include="Demon.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="Enemy.h" />
@@ -181,6 +184,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PreLoad.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="Skelet.h" />
     <ClInclude Include="Slider.h" />
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="Tile.h" />

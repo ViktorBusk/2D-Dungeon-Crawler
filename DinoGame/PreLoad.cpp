@@ -9,6 +9,8 @@ PreLoad::~PreLoad()
 {
 	delete PreLoad::Textures::knight;
 	delete PreLoad::Textures::bigZombie;
+	delete PreLoad::Textures::demon;
+	delete PreLoad::Textures::skelet;
 
 	delete PreLoad::Textures::weapons;
 
@@ -28,7 +30,9 @@ void PreLoad::load()
 	//Textures
 	PreLoad::Textures::knight->loadFromFile("Textures/characters/knight/Orange/knight_orange.png");
 	PreLoad::Textures::bigZombie->loadFromFile("Textures/characters/big_zombie/big_zombie.png");
-	
+	PreLoad::Textures::demon->loadFromFile("Textures/characters/demon/demon.png");
+	PreLoad::Textures::skelet->loadFromFile("Textures/characters/skelet/skelet.png");
+
 	PreLoad::Textures::weapons->loadFromFile("Textures/Weapons/weapons.png");
 
 	PreLoad::Textures::floors->loadFromFile("Textures/Terrain/floor/floors.png");
@@ -48,6 +52,8 @@ void PreLoad::load()
 
 Texture *PreLoad::Textures::knight = new Texture;
 Texture *PreLoad::Textures::bigZombie = new Texture;
+Texture *PreLoad::Textures::demon = new Texture;
+Texture *PreLoad::Textures::skelet = new Texture;
 
 Texture *PreLoad::Textures::weapons = new Texture;
 

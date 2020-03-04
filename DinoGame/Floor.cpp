@@ -6,6 +6,10 @@ Floor::Floor(Vector2f pos, Vector2i type) :
 {
 	this->type = type;
 	this->sprite.setTextureRect(this->textureRects[this->type.x][this->type.y]);
+	this->createSpriteHitboxComponent(Color(0, 255, 255, 125));
+	this->shouldColide = false;
+	this->zIndex = 0;
+	this->fixedZIndex = true;
 }
 
 

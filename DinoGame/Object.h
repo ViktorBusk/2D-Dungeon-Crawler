@@ -19,8 +19,8 @@ protected:
 	int colisionIndex;
 	MovementComponent* movementComponent;
 	HitboxComponent *hitboxComponent;
-
 	ColisionComponent *colisionComponent;
+	
 	struct EditorData{
 		bool defined = false;
 		Vector2f distance;
@@ -30,6 +30,7 @@ protected:
 public:
 	bool fixedZIndex;
 	bool chosen;
+	bool shouldColide;
 	float currentDistance;
 	struct GridPos
 	{
@@ -75,6 +76,7 @@ public:
 	bool mouseColision(RenderWindow *window);
 	bool colision(Object* object);
 	void flipTexture();
+	void createSpriteHitboxComponent(Color color);
 	static std::vector<std::vector<IntRect>> getTextureRects(Texture *spriteSheet, const Vector2i &nrOfImgs);
 };
 

@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="AllEnemies.h" />
     <ClInclude Include="AllEntities.h" />
+    <ClInclude Include="AllTiles.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="BigZombie.h" />
     <ClInclude Include="Button.h" />

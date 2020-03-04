@@ -266,6 +266,9 @@
     <ClInclude Include="Skelet.h">
       <Filter>Header Files\Entities\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="AllTiles.h">
+      <Filter>Header Files\Entities\Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="hitboxList.txt">

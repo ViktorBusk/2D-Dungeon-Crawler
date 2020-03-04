@@ -21,14 +21,14 @@ void Game::init()
 
 	//Init Window
 	const Vector2i windowSize(800, 800);
-	VideoMode normalMode = VideoMode(windowSize.x, windowSize.y);
-	VideoMode desktopMode = VideoMode().getDesktopMode();
+	VideoMode mode = VideoMode(WINDOWSIZE.x, WINDOWSIZE.y);
+	//VideoMode desktopMode = VideoMode().getDesktopMode();
 
-	this->window = new RenderWindow(desktopMode, "Dungeon Game", Style::None);
+	this->window = new RenderWindow(mode, "Dungeon Game", Style::None);
 	//window->setVerticalSyncEnabled(true);
 
 	//Init Clock
-	this->framerateLimit = 100000.f;
+	this->framerateLimit = INT_MAX;
 	window->setFramerateLimit(framerateLimit);
 	this->multiplier = 144.f;
 
@@ -40,18 +40,7 @@ void Game::init()
 	
 	//Init Grid
 	this->initGrid();
-	for (size_t i = 0; i < 10; i++)
-	{
-		this->entites.push_back(new Weapon(Vector2f(rand() % this->window->getSize().x, rand() % this->window->getSize().y), PreLoad::Textures::weapons, Vector2i(20, 1), SCALE, rand() % 20, 10, 10, true));
-	}
-	for (size_t i = 0; i < 10; i++)
-	{
-		this->entites.push_back(new BigZombie(Vector2f(rand()%this->window->getSize().x, rand() % this->window->getSize().y)));
-	}
-	this->entites.push_back(new Wall(Vector2f(3*TILESIZE*SCALE.x, 3*TILESIZE*SCALE.y), Vector2i(1, 0)));
-	this->entites.push_back(new Wall(Vector2f(3*TILESIZE*SCALE.x, 4*TILESIZE*SCALE.y), Vector2i(2, 0)));
-	this->entites.push_back(new Wall(Vector2f(3*TILESIZE*SCALE.x, 5*TILESIZE*SCALE.y), Vector2i(3, 0)));
-
+	
 	//Player init
 	this->player = new Hero(Vector2f(this->window->getSize().x / 2, this->window->getSize().y / 2));
 	this->entites.push_back(player);
@@ -81,7 +70,10 @@ void Game::startLoop()
 	bool first = true;
 	while (this->window->isOpen())
 	{
+
+		//Events
 		this->pollEvents();
+	
 		//Game clock
 		this->updateClock();
 
@@ -96,6 +88,7 @@ void Game::startLoop()
 		});
 		for (auto *entity : entites)
 		{
+			if (entity->getHitboxComponent() == NULL || !entity->shouldColide) continue;
 			if (!first)
 			{
 				this->addObjectToWorldGrid(entity);
@@ -129,7 +122,7 @@ void Game::startLoop()
 
 		this->window->display();
 		first = false;
-		this->clearWorldGrid(); 
+		this->clearWorldGrid();
 	}
 }
 
@@ -144,7 +137,8 @@ void Game::pollEvents()
 		if (event.type == Event::MouseWheelScrolled)
 			if(this->editor != NULL) this->editor->updateZoom(event);
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Escape)) this->window->close();		
+	if (Keyboard::isKeyPressed(Keyboard::Escape)) this->window->close();
+	if (Keyboard::isKeyPressed(Keyboard::Delete) && this->editor != NULL) this->editor->deleteChosenObjects();
 }
 
 void Game::updateClock()
@@ -157,7 +151,7 @@ void Game::updateClock()
 	if (incer >= cap)
 	{
 		incer = 0;
-		this->printFPS();
+		//this->printFPS();
 		
 	}
 	incer+=this->dt*this->multiplier;
@@ -166,6 +160,11 @@ void Game::updateClock()
 void Game::printFPS()
 {
 	std::cout << this->FPS << std::endl;
+}
+
+void Game::deleteEntities()
+{
+	
 }
 
 void Game::clearEntityVec()
@@ -195,7 +194,6 @@ void Game::ensureBounds(Object * entity)
 
 void Game::addObjectToWorldGrid(Object * object)
 {
-	if (object->getHitboxComponent() == NULL) return;
 	object->setWorldGridPos();
 	if (object->getWorldGridPos().topLeft.x < 0) return;
 	if (object->getWorldGridPos().topLeft.y < 0) return;

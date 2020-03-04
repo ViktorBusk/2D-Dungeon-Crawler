@@ -23,9 +23,10 @@ void Object::initVariables()
 	this->hitboxComponent = NULL;
 	this->colisionComponent = NULL;
 	this->zIndex = 0;
-	this->currentDistance = 0;
+	this->currentDistance = INT_MAX;
 	this->fixedZIndex = false;
 	this->colisionIndex = this->zIndex;
+	this->shouldColide = false;
 }
 
 void Object::createMovementComponent(const float maxVelocity , const float acceleration, const float deAcceleration)
@@ -36,6 +37,7 @@ void Object::createMovementComponent(const float maxVelocity , const float accel
 
 void Object::createHitboxComponent(Color color)
 {
+	this->shouldColide = true;
 	if (this->hitboxComponent != NULL) delete this->hitboxComponent;
 	this->hitboxComponent = new HitboxComponent(this->sprite, color);
 }
@@ -183,7 +185,7 @@ void Object::setPositionCenter(const Vector2f & pos)
 	this->sprite.setPosition(Vector2f(pos.x - this->sprite.getGlobalBounds().width/2, pos.y - this->sprite.getGlobalBounds().height / 2));
 }
 
-RectangleShape & Object::getHitbox() const
+RectangleShape &Object::getHitbox() const
 {
 	return *this->hitboxComponent->rect;
 }
@@ -228,6 +230,12 @@ void Object::flipTexture()
 		}
 	}
 
+}
+
+void Object::createSpriteHitboxComponent(Color color)
+{
+	this->createHitboxComponent(color);
+	this->hitboxComponent->setStaticComponent(Vector2f(0.f, 0.f), Vector2f(this->sprite.getTextureRect().width, this->sprite.getTextureRect().height));
 }
 
 std::vector<std::vector<IntRect>> Object::getTextureRects(Texture * spriteSheet, const Vector2i &nrOfImgs)

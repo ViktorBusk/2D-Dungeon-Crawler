@@ -31,6 +31,7 @@ private:
 
 	Hero *player;
 	std::vector<Object*> entites;
+	std::vector<Object*> deleteEntites;
 	std::vector<Tile*> staticEntities;
 
 	//Camera
@@ -49,6 +50,7 @@ private:
 	void pollEvents();
 	void updateClock();
 	void printFPS();
+	void deleteEntities();
 	void updateView(const Vector2f &targetPos);
 	void ensureBounds(Object* entity);
 	void clearEntityVec();

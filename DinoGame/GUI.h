@@ -1,5 +1,6 @@
 #pragma once
 #include "utils.hpp"
+#include "Object.h"
 
 using namespace sf;
 
@@ -21,6 +22,7 @@ public:
 	Vector2f constPos;
 	FloatRect constDimensions;
 	static std::vector<GUI*> *GUI_elements;
+	static std::vector<Object*> *entitiesPtr;
 	static unsigned int index;
 	unsigned int myIndex;
 	Sprite sprite;

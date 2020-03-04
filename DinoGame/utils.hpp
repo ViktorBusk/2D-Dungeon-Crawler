@@ -24,6 +24,7 @@
 #define PI 3.141592653
 #define FRICTION 2.f
 #define GRAVITY 9.82
+#define WINDOWSIZE Vector2i(1920, 1080)
 
 
 struct Utils {

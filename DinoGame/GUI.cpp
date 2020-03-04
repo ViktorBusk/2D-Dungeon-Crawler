@@ -5,7 +5,7 @@ GUI::GUI(Vector2f pos, GUI* parent)
 	this->parent = parent;
 	if (this->parent != NULL)
 	{
-		this->sprite.setPosition(Vector2f(this->parent->getPosition().x + this->parent->sprite.getGlobalBounds().width / 2, pos.y));
+		this->sprite.setPosition(Vector2f(pos.x + this->parent->sprite.getGlobalBounds().width / 2, pos.y));
 		this->myIndex = this->parent->myIndex;
 	}
 	else
@@ -77,3 +77,4 @@ void GUI::update(const float & dt, const float & multiplier, const Vector2f &mou
 }
 
 std::vector<GUI*> *GUI::GUI_elements = NULL;
+std::vector<Object*> *GUI::entitiesPtr = NULL;

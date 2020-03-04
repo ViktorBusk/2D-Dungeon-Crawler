@@ -7,8 +7,7 @@ Wall::Wall(Vector2f pos, Vector2i type) :
 	this->sprite.setTextureRect(this->textureRects[this->type.x][this->type.y]);
 	
 	//Hitbox
-	this->createHitboxComponent(Color(0, 255, 255, 125));
-	this->hitboxComponent->setStaticComponent(Vector2f(0.f, 0.f), Vector2f(this->sprite.getTextureRect().width, this->sprite.getTextureRect().height));
+	this->createSpriteHitboxComponent(Color(0, 255, 255, 125));
 
 	//Colision
 	this->createColisionComponent(false, false, true, true, false);

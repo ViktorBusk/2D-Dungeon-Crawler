@@ -22,7 +22,7 @@ void ColisionComponent::draw(RenderWindow * window) const
 
 void ColisionComponent::update(Sprite *characterSprite, const RectangleShape &characterHitbox, const Vector2f& prevPos, const float &dt, const float &multiplier)
 {
-	//TODO: change if conditions cause they only work if they sprite has the same size as the wall 
+	//TODO: WRONG! DOES NOT TAKE INOT ACCOUT THE SPRITESCALE 
 	//Character
 	Vector2f cS1Pos = characterSprite->getPosition();
 	Vector2f cS2Pos = characterSprite->getPosition() + Vector2f(characterSprite->getGlobalBounds().width, characterSprite->getGlobalBounds().height);

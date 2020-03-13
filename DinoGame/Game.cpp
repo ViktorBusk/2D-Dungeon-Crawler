@@ -40,10 +40,11 @@ void Game::init()
 	
 	//Init Grid
 	this->initGrid();
-	
+
 	//Player init
 	this->player = new Hero(Vector2f(this->window->getSize().x / 2, this->window->getSize().y / 2));
 	this->entites.push_back(player);
+
 	///////////////////////////////////////////////////
 
 	//Init Camera
@@ -125,6 +126,7 @@ void Game::startLoop()
 		this->clearWorldGrid();
 	}
 }
+
 
 void Game::pollEvents()
 {

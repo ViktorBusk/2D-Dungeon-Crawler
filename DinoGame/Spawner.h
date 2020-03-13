@@ -14,8 +14,6 @@ private:
 	std::vector<std::vector<IntRect>> textureRects;
 	
 	//Static spawner variables
-	static std::string chosenType;
-	static Vector2i chosenTypes;
 	static Vector2f constSpawnerPos;
 	static Vector2f constSpawnerTextPos;
 	static Vector2f spriteRect;
@@ -28,6 +26,8 @@ private:
 protected:
 
 public:
+	static std::string chosenType;
+	static Vector2i chosenTypes;
 	static unsigned int spawnAmount;
 	static void drawCurrentType(RenderWindow *window);
 	static void changeCurrentType(Spawner* spawner);

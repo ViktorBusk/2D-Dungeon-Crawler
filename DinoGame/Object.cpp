@@ -248,7 +248,7 @@ std::vector<std::vector<IntRect>> Object::getTextureRects(Texture * spriteSheet,
 		std::vector<IntRect> temp;
 		for (int y = 0; y < spriteSheet->getSize().y; y+=inc.y)
 		{
-			temp.push_back(IntRect(Vector2i(x, y), Vector2i(inc.x-1, inc.y-1)));
+			temp.push_back(IntRect(Vector2i(x, y), Vector2i(inc.x, inc.y)));
 		}
 		textureRects.push_back(temp);
 	}

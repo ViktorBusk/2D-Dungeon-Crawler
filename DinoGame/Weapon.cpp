@@ -1,7 +1,7 @@
 #include "Weapon.h"
 
-Weapon::Weapon(Vector2f pos, Texture *spriteSheet, Vector2i sheetSize, Vector2f scale, int type, int damage, int weight, bool idle) :
-	Item(pos, spriteSheet, sheetSize, scale, weight, idle)
+Weapon::Weapon(Vector2f pos, int type, int damage, int weight, bool idle) :
+	Item(pos, PreLoad::Textures::weapons, Vector2i(20, 1), SCALE, weight, idle)
 {
 	//Sprite
 	this->type = type;

@@ -26,7 +26,7 @@ private:
 		float mapScale = 8;
 		Vector2i mapSize = Vector2i(50, 50);
 		unsigned int maxNrOfRooms = 200;
-		Vector2i roomSize = Vector2i(3, 5);
+		Vector2i roomSize = Vector2i(2, 3);
 	};
 
 	Hero *player;

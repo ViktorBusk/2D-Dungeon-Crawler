@@ -13,7 +13,7 @@ protected:
 	RectangleShape attackHitbox;
 
 public:
-	Weapon(Vector2f pos, Texture *spriteSheet, Vector2i sheetSize, Vector2f scale, int type, int damage, int weight, bool idle);
+	Weapon(Vector2f pos, int type, int damage, int weight, bool idle);
 	virtual ~Weapon();
 
 	//Functions

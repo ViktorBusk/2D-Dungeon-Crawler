@@ -10,7 +10,7 @@ Wall::Wall(Vector2f pos, Vector2i type) :
 	this->createSpriteHitboxComponent(Color(0, 255, 255, 125));
 
 	//Colision
-	this->createColisionComponent(false, false, true, true, false);
+	//this->createColisionComponent(false, false, true, true, false);
 	this->colisionIndex = 1000000000;
 	this->zIndex = this->colisionIndex;
 	this->fixedZIndex = true;

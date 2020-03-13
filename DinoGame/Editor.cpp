@@ -35,12 +35,13 @@ void Editor::init()
 	this->initGrid();
 	this->initGUI();
 	this->initSpawner();
+	RoomLoader::initStatic();
 }
 
 void Editor::initGrid()
 {
 	this->gridSprite.setTexture(*PreLoad::Textures::grid);
-	this->gridSprite.setScale(1.40625, 1.40625);
+	this->gridSprite.setScale(1.5, 1.5);
 	this->resizeGridImage(this->worldGridPtr->getSize());
 	this->showGrid = true;
 }
@@ -49,23 +50,29 @@ void Editor::initGUI()
 {
 	GUI::GUI_elements = &this->GUI_elements;
 	GUI::entitiesPtr = this->entitesPtr;
+	GUI::GUI_TreeView_elements = &this->treeView;
 
 	//Order of the partentfolders are important!!!
 	//////////////////////////////PARENTFOLDERS//////////////////////////////
 	Folder* floorFolder = new Folder("Floor", NULL, Vector2f(10.f, 10.f));
 	this->GUI_elements.push_back(floorFolder);
+	GUI::GUI_TreeView_elements->push_back(floorFolder);
 
 	Folder* characterFolder = new Folder("Characters", NULL, Vector2f(10.f, 35.f));
 	this->GUI_elements.push_back(characterFolder);
+	GUI::GUI_TreeView_elements->push_back(characterFolder);
 
 	Folder* doorFolder = new Folder("Doors", NULL, Vector2f(10.f, 60.f));
 	this->GUI_elements.push_back(doorFolder);
+	GUI::GUI_TreeView_elements->push_back(doorFolder);
 
 	Folder* weaponFolder = new Folder("Weapons", NULL, Vector2f(10.f, 85.f));
 	this->GUI_elements.push_back(weaponFolder);
+	GUI::GUI_TreeView_elements->push_back(weaponFolder);
 
 	Folder* wallFolder = new Folder("Walls", NULL, Vector2f(10.f, 110.f));
 	this->GUI_elements.push_back(wallFolder);
+	GUI::GUI_TreeView_elements->push_back(wallFolder);
 	//////////////////////////////////////////////////////////////////////////
 
 	//Floor
@@ -86,7 +93,6 @@ void Editor::initGUI()
 	}
 
 	//Characters
-
 	Folder* testFolder2 = new Folder("Enemies", characterFolder, Vector2f(10.f, 60.f));
 	this->GUI_elements.push_back(testFolder2);
 	characterFolder->addContent(testFolder2);
@@ -108,7 +114,125 @@ void Editor::initGUI()
 	testFolder2->addContent(skeletSpawner);
 
 	//Walls
-	Folder* singleWallFolder = new Folder("Single wall", wallFolder, Vector2f(10.f, 135.f));
+	//Wall types 
+	Folder* bottomWallFolder = new Folder("Bottom", wallFolder, Vector2f(10.f, 135.f));
+	this->GUI_elements.push_back(bottomWallFolder);
+	wallFolder->addContent(bottomWallFolder);
+
+	Spawner* w1 = new Spawner(Vector2f(50.f, 160.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(0, 2));
+	this->GUI_elements.push_back(w1);
+	bottomWallFolder->addContent(w1);
+
+	Spawner* w2 = new Spawner(Vector2f(50.f, 185.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(2, 2));
+	this->GUI_elements.push_back(w2);
+	bottomWallFolder->addContent(w2);
+
+	Spawner* w3 = new Spawner(Vector2f(50.f, 210.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(6, 2));
+	this->GUI_elements.push_back(w3);
+	bottomWallFolder->addContent(w3);
+
+	Spawner* w4 = new Spawner(Vector2f(50.f, 235.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(6, 6));
+	this->GUI_elements.push_back(w4);
+	bottomWallFolder->addContent(w4);
+
+	Spawner* w5 = new Spawner(Vector2f(50.f, 260.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(1, 2));
+	this->GUI_elements.push_back(w5);
+	bottomWallFolder->addContent(w5);
+
+	Spawner* w6 = new Spawner(Vector2f(50.f, 285.f), PreLoad::Textures::walls, "Wall", bottomWallFolder, Vector2i(3, 0));
+	this->GUI_elements.push_back(w6);
+	bottomWallFolder->addContent(w6);
+
+	Folder* backWallFolder = new Folder("Back", wallFolder, Vector2f(10.f, 160.f));
+	this->GUI_elements.push_back(backWallFolder);
+	wallFolder->addContent(backWallFolder);
+
+	Spawner* w7 = new Spawner(Vector2f(50.f, 185.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(3, 1));
+	this->GUI_elements.push_back(w7);
+	backWallFolder->addContent(w7);
+
+	Spawner* w8 = new Spawner(Vector2f(50.f, 210.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(5, 6));
+	this->GUI_elements.push_back(w8);
+	backWallFolder->addContent(w8);
+
+	Spawner* w9 = new Spawner(Vector2f(50.f, 235.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(6, 2));
+	this->GUI_elements.push_back(w9);
+	backWallFolder->addContent(w9);
+
+	Spawner* w10 = new Spawner(Vector2f(50.f, 260.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(6, 6));
+	this->GUI_elements.push_back(w10);
+	backWallFolder->addContent(w10);
+
+	Spawner* w11 = new Spawner(Vector2f(50.f, 285.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(3, 2));
+	this->GUI_elements.push_back(w11);
+	backWallFolder->addContent(w11);
+
+	Spawner* w12 = new Spawner(Vector2f(50.f, 310.f), PreLoad::Textures::walls, "Wall", backWallFolder, Vector2i(7, 0));
+	this->GUI_elements.push_back(w12);
+	backWallFolder->addContent(w12);
+
+	Folder* leftWallFolder = new Folder("Left", wallFolder, Vector2f(10.f, 185.f));
+	this->GUI_elements.push_back(leftWallFolder);
+	wallFolder->addContent(leftWallFolder);
+	
+	Spawner* w13 = new Spawner(Vector2f(50.f, 210.f), PreLoad::Textures::walls, "Wall", leftWallFolder, Vector2i(2, 6));
+	this->GUI_elements.push_back(w13);
+	leftWallFolder->addContent(w13);
+
+	Spawner* w14 = new Spawner(Vector2f(50.f, 235.f), PreLoad::Textures::walls, "Wall", leftWallFolder, Vector2i(0, 6));
+	this->GUI_elements.push_back(w14);
+	leftWallFolder->addContent(w14);
+
+	Spawner* w15 = new Spawner(Vector2f(50.f, 260.f), PreLoad::Textures::walls, "Wall", leftWallFolder, Vector2i(4, 6));
+	this->GUI_elements.push_back(w15);
+	leftWallFolder->addContent(w15);
+
+	Folder* rightWallFolder = new Folder("Right", wallFolder, Vector2f(10.f, 210.f));
+	this->GUI_elements.push_back(rightWallFolder);
+	wallFolder->addContent(rightWallFolder);
+
+	Spawner* w16 = new Spawner(Vector2f(50.f, 235.f), PreLoad::Textures::walls, "Wall", rightWallFolder, Vector2i(1, 6));
+	this->GUI_elements.push_back(w16);
+	rightWallFolder->addContent(w16);
+
+	Spawner* w17 = new Spawner(Vector2f(50.f, 260.f), PreLoad::Textures::walls, "Wall", rightWallFolder, Vector2i(6, 5));
+	this->GUI_elements.push_back(w17);
+	rightWallFolder->addContent(w17);
+
+	Spawner* w18 = new Spawner(Vector2f(50.f, 285.f), PreLoad::Textures::walls, "Wall", rightWallFolder, Vector2i(3, 6));
+	this->GUI_elements.push_back(w18);
+	rightWallFolder->addContent(w18);
+
+	Folder* midWallFolder = new Folder("Mid", wallFolder, Vector2f(10.f, 235.f));
+	this->GUI_elements.push_back(midWallFolder);
+	wallFolder->addContent(midWallFolder);
+
+	Spawner* w19 = new Spawner(Vector2f(50.f, 260.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(4, 5));
+	this->GUI_elements.push_back(w19);
+	midWallFolder->addContent(w19);
+
+	Spawner* w20 = new Spawner(Vector2f(50.f, 285.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(2, 5));
+	this->GUI_elements.push_back(w20);
+	midWallFolder->addContent(w20);
+
+	Spawner* w21 = new Spawner(Vector2f(50.f, 310.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(6, 2));
+	this->GUI_elements.push_back(w21);
+	midWallFolder->addContent(w21);
+
+	Spawner* w22 = new Spawner(Vector2f(50.f, 335.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(6, 6));
+	this->GUI_elements.push_back(w22);
+	midWallFolder->addContent(w22);
+
+	Spawner* w23 = new Spawner(Vector2f(50.f, 360.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(5, 5));
+	this->GUI_elements.push_back(w23);
+	midWallFolder->addContent(w23);
+
+	Spawner* w24 = new Spawner(Vector2f(50.f, 385.f), PreLoad::Textures::walls, "Wall", midWallFolder, Vector2i(3, 5));
+	this->GUI_elements.push_back(w24);
+	midWallFolder->addContent(w24);
+
+	//All walls
+	Folder* singleWallFolder = new Folder("Single wall", wallFolder, Vector2f(10.f, 260.f));
 	this->GUI_elements.push_back(singleWallFolder);
 	wallFolder->addContent(singleWallFolder);
 
@@ -118,13 +242,14 @@ void Editor::initGUI()
 	{
 		for (size_t x = 0; x < 8; x++)
 		{
-			Spawner* wall = new Spawner(Vector2f(50.f + rowIndex * 200.f, 160.f + index * 25.f), PreLoad::Textures::walls, "Wall", singleWallFolder, Vector2i(x, y));
+			Spawner* wall = new Spawner(Vector2f(50.f + rowIndex * 200.f, 285.f + index * 25.f), PreLoad::Textures::walls, "Wall", singleWallFolder, Vector2i(x, y));
 			this->GUI_elements.push_back(wall);
 			singleWallFolder->addContent(wall);
 			if (rowIndex == 1) rowIndex = 0, index++;
 			else rowIndex++;
 		}
 	}
+
 }
 
 void Editor::initSpawner()
@@ -163,6 +288,19 @@ void Editor::ensureGrid(Object* entity)
 		if (zeroLevelX % padding > -(padding / 2 - 1) && zeroLevelX % padding < 0) entity->setPosition(Vector2f(entity->getPos().x + 1, entity->getPos().y));
 		if (zeroLevelY % padding <= -(padding / 2 - 1) && zeroLevelY % padding > -padding) entity->setPosition(Vector2f(entity->getPos().x, entity->getPos().y - 1));
 		if (zeroLevelY % padding > -(padding / 2 - 1) && zeroLevelY % padding < -0) entity->setPosition(Vector2f(entity->getPos().x, entity->getPos().y + 1));
+	}
+}
+
+void Editor::rectSpawn(const Vector2i & tileSize)
+{
+	if (!this->inGrid(this->mousePoint.startBuilderPos) || !this->inGrid(this->mousePoint.endBuilderPos)) return;
+
+	for (size_t x = this->mousePoint.startBuilderPos.x; x <= this->mousePoint.endBuilderPos.x; x++)
+	{
+		for (size_t y = this->mousePoint.startBuilderPos.y; y <= this->mousePoint.endBuilderPos.y; y++)
+		{
+			Spawner::spawn(Vector2f(x*tileSize.x, y*tileSize.y));
+		}
 	}
 }
 
@@ -211,14 +349,21 @@ void Editor::updateBuilder(const float & dt, const float & multiplier, const Vec
 	{
 		this->mousePoint.setBuild = false;
 		this->mousePoint.endBuilderPos = this->current;
-		if (!this->inGrid(this->mousePoint.startBuilderPos) || !this->inGrid(this->mousePoint.endBuilderPos)) return;
-		
-		for (size_t x = this->mousePoint.startBuilderPos.x; x <= this->mousePoint.endBuilderPos.x; x++)
+		if (Spawner::chosenType == "Wall")
 		{
-			for (size_t y = this->mousePoint.startBuilderPos.y; y <= this->mousePoint.endBuilderPos.y; y++)
+			if (this->mousePoint.startBuilderPos.x != this->mousePoint.endBuilderPos.x &&
+				this->mousePoint.startBuilderPos.y != this->mousePoint.endBuilderPos.y)
 			{
-				Spawner::spawn(Vector2f(x*tileSize.x, y*tileSize.y));
+				return;
 			}
+			else
+			{
+				this->rectSpawn(tileSize);
+			}
+		}
+		else
+		{
+			this->rectSpawn(tileSize);
 		}
 	}
 }
@@ -352,8 +497,9 @@ void Editor::update(const float & dt, const float & multiplier)
 	}
 	
 	Spawner::updateSpawn(dt, multiplier, Vector2f(this->current.x*tileSize.x, this->current.y*tileSize.y));
+	RoomLoader::updateRoomSave(this->window, dt, multiplier, this->mousePos);
+
 
 	this->updateBuilder(dt, multiplier, tileSize);
 	this->updateMouseRect(dt, multiplier);
-	
 }

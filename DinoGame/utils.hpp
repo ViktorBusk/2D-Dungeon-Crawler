@@ -17,10 +17,11 @@
 #include <algorithm>
 #include <typeinfo>
 #include <fstream>
+#include <sstream>
 
 //Game Constants (change later)
 #define SCALE Vector2f(3.f, 3.f)
-#define TILESIZE 15
+#define TILESIZE 16
 #define PI 3.141592653
 #define FRICTION 2.f
 #define GRAVITY 9.82

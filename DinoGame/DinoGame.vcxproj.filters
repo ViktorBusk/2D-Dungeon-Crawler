@@ -67,6 +67,9 @@
     <Filter Include="Header Files\Entities\Tiles\FLoor">
       <UniqueIdentifier>{c68a45f9-7f8c-4437-b669-8f79f4cecafb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\FileManager">
+      <UniqueIdentifier>{7da45929-5f35-4110-8864-4b2a4c1a44bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -161,6 +164,12 @@
     </ClCompile>
     <ClCompile Include="Skelet.cpp">
       <Filter>Header Files\Entities\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Header Files\FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomLoader.cpp">
+      <Filter>Header Files\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +277,12 @@
     </ClInclude>
     <ClInclude Include="AllTiles.h">
       <Filter>Header Files\Entities\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Header Files\FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomLoader.h">
+      <Filter>Header Files\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

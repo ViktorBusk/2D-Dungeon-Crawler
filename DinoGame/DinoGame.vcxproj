@@ -134,6 +134,7 @@
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Folder.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PreLoad.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomLoader.cpp" />
     <ClCompile Include="Skelet.cpp" />
     <ClCompile Include="Slider.cpp" />
     <ClCompile Include="Spawner.cpp" />
@@ -170,6 +172,7 @@
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="Game.h" />
@@ -185,6 +188,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PreLoad.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomLoader.h" />
     <ClInclude Include="Skelet.h" />
     <ClInclude Include="Slider.h" />
     <ClInclude Include="Spawner.h" />

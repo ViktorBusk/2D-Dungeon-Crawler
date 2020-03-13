@@ -1,9 +1,63 @@
-﻿  Game.cpp
-c:\users\vikto\desktop\dinogame\dinogame\utils.hpp(32): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-c:\users\vikto\desktop\dinogame\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(33): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(45): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  AnimationComponent.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  BigZombie.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\bigzombie.cpp(9): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Button.cpp
+  Cell.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Character.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\character.cpp(8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\character.cpp(37): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\character.cpp(154): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\character.cpp(159): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  ColisionComponent.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Demon.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\demon.cpp(9): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Dungeon.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\graph.h(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\graph.h(69): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(68): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(204): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\dungeon.cpp(206): warning C4018: '<': signed/unsigned mismatch
+  Editor.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(261): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -12,7 +66,101 @@ c:\users\vikto\desktop\dinogame\dinogame\game.cpp(45): warning C4244: 'argument'
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(262): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(277): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(279): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(280): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(297): warning C4018: '<=': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(299): warning C4018: '<=': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(301): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(334): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(464): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(466): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(479): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(484): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(485): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(487): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(488): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\editor.cpp(498): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Enemy.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+  FileManager.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Floor.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Folder.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\folder.cpp(62): warning C4305: 'initializing': truncation from 'int' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\folder.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\folder.cpp(169): warning C4356: 'GUI::rootIndex': static data member cannot be initialized via derived class
+  Game.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(31): warning C4305: '=': truncation from 'int' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(32): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(45): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -21,25 +169,104 @@ c:\users\vikto\desktop\dinogame\dinogame\game.cpp(49): warning C4244: 'argument'
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(56): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(201): warning C4018: '<=': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(203): warning C4018: '<=': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(216): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\game.cpp(218): warning C4018: '<': signed/unsigned mismatch
+  Grid.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\grid.cpp(7): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\grid.cpp(10): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\grid.cpp(36): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
           with
           [
-              T=unsigned int
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\grid.cpp(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\grid.cpp(39): warning C4018: '<': signed/unsigned mismatch
+  GUI.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Hero.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hero.cpp(19): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
           ]
           and
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(171): warning C4018: '<=': signed/unsigned mismatch
-c:\users\vikto\desktop\dinogame\dinogame\game.cpp(173): warning C4018: '<=': signed/unsigned mismatch
+  HitboxComponent.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hitboxcomponent.cpp(50): warning C4244: 'argument': conversion from 'const T' to 'const _Ty', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              _Ty=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hitboxcomponent.cpp(51): warning C4244: 'argument': conversion from 'const T' to 'const _Ty', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              _Ty=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hitboxcomponent.cpp(52): warning C4244: 'argument': conversion from 'const T' to 'const _Ty', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              _Ty=int
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hitboxcomponent.cpp(53): warning C4244: 'argument': conversion from 'const T' to 'const _Ty', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              _Ty=int
+          ]
+  HitboxList.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\hitboxlist.cpp(62): warning C4244: 'argument': conversion from 'float' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  InputBox.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\character.cpp(195): warning C4715: 'Character::findIndex': not all control paths return a value
+  Compiling...
+  Item.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\item.cpp(13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\item.cpp(14): warning C4305: '*=': truncation from 'double' to 'float'
+  main.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+  MovementComponent.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Object.cpp
-c:\users\vikto\desktop\dinogame\dinogame\utils.hpp(32): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(68): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(26): warning C4305: '=': truncation from 'int' to 'float'
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(81): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(97): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(123): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -48,27 +275,36 @@ c:\users\vikto\desktop\dinogame\dinogame\object.cpp(97): warning C4244: 'argumen
           [
               T=int
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(98): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(124): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(99): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(125): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(100): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(126): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(101): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(127): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(203): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(238): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(244): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -77,19 +313,19 @@ c:\users\vikto\desktop\dinogame\dinogame\object.cpp(203): warning C4244: 'argume
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(205): warning C4018: '<': signed/unsigned mismatch
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(205): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(246): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(246): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(208): warning C4018: '<': signed/unsigned mismatch
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(208): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(249): warning C4018: '<': signed/unsigned mismatch
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(249): warning C4244: '+=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(210): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(251): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -97,7 +333,67 @@ c:\users\vikto\desktop\dinogame\dinogame\object.cpp(210): warning C4244: 'argume
           and
           [
               T=int
+          ]
+  PreLoad.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Room.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\room.cpp(10): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  RoomLoader.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Skelet.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\skelet.cpp(9): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Slider.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Spawner.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\spawner.cpp(100): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\spawner.cpp(126): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Tile.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Wall.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\wall.h(14): warning C4141: 'virtual': used more than once
+  Weapon.cpp
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\utils.hpp(33): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\weapon.cpp(16): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
           ]
   Generating Code...
-c:\users\vikto\desktop\dinogame\dinogame\object.cpp(122): warning C4172: returning address of local variable or temporary
-  DinoGame.vcxproj -> C:\Users\vikto\Desktop\DinoGame\Debug\DinoGame.exe
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\room.cpp(21): warning C4172: returning address of local variable or temporary
+c:\users\vikto\github\2d-dungeon-crawler\dinogame\object.cpp(168): warning C4172: returning address of local variable or temporary
+  LINK : C:\Users\vikto\GitHub\2D-Dungeon-Crawler\Debug\DinoGame.exe not found or not built by the last incremental link; performing full link
+  DinoGame.vcxproj -> C:\Users\vikto\GitHub\2D-Dungeon-Crawler\Debug\DinoGame.exe

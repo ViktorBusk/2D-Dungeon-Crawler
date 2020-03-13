@@ -5,6 +5,7 @@
 #include "Grid.h"
 #include "Tile.h"
 #include "Spawner.h"
+#include "RoomLoader.h"
 
 using namespace sf;
 
@@ -14,6 +15,7 @@ private:
 	Grid *worldGridPtr;
 	std::vector<Object*> *entitesPtr;
 	std::vector<GUI*> GUI_elements;
+	std::vector<GUI*> treeView;
 	RenderWindow* window;
 	Object** cameraFollow;
 	Vector2i prev;
@@ -30,6 +32,7 @@ private:
 	void resizeGridImage(const Vector2i &size);
 	void resizeGrid(const Vector2i &size);
 	void ensureGrid(Object* entity);
+	void rectSpawn(const Vector2i &tileSize);
 	Sprite gridSprite;
 	bool showGrid;
 	unsigned int chosenAmt;

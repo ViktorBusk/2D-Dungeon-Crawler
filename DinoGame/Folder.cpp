@@ -62,30 +62,46 @@ void Folder::moveLower_GUI_elements(bool down)
 	float lowestPos = -INT_MAX;
 
 	//Find the lowest element in the folder
-	for (GUI* element : *GUI::GUI_elements)
+	for (GUI* element : *GUI::GUI_TreeView_elements)
 	{
 		float bottom = element->constPos.y + element->constDimensions.height;
-		if (element->myIndex != this->myIndex || !element->visableState) continue;
+		if (!this->hasChild(element) || !element->visableState) continue;
 		if (bottom > lowestPos) lowestPos = bottom;
 	}
+	float distance = this->content[0]->constPos.y - lowestPos - 5;
 
-	float distance = this->content[0]->constPos.y - lowestPos;
-	if(down) distance = -distance;
-
+	float remDist = fmod(distance, 22.8);
+	distance -= remDist;
+	if (distance == 0) distance = this->content[0]->constPos.y - lowestPos;
+	if (down) distance = -distance;
 	//Move all the lover elements by that distance
-	for (GUI* element : *GUI::GUI_elements)
+	for (GUI* element : *GUI::GUI_TreeView_elements)
 	{
-		if (element->myIndex > this->myIndex) element->moveY(distance);
+		if (element == this) continue;
+		for (size_t i = 0; i < this->indexVec.size(); i++)
+		{
+			if (i > element->indexVec.size() - 1) break;
+			if (element->indexVec[i] > this->indexVec[i])
+			{
+				element->moveY(distance);
+				break;
+			}
+		}
 	}
 }
 
 void Folder::addContent(GUI * moreContent)
 {
+	this->GUI_TreeView_elements->push_back(moreContent);
 	this->content.push_back(moreContent);
 }
 
 void Folder::addContent(std::vector<GUI*> moreContent)
 {
+	for (GUI* content : moreContent)
+	{
+		this->GUI_TreeView_elements->push_back(content);
+	}
 	this->content.insert(this->content.end(), moreContent.begin(), moreContent.end());
 }
 
@@ -150,4 +166,4 @@ void Folder::update(const float & dt, const float & multiplier, const Vector2f &
 	this->GUI::update(dt, multiplier, mousePos);
 }
 
-unsigned int Folder::index = 0;
+unsigned int Folder::rootIndex = 0;
